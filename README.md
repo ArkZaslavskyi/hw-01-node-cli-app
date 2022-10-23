@@ -1,3 +1,5 @@
+# CLI приложение
+
 # Получаем и выводим весь список контактов в виде таблицы (console.table)
 
 node index.js --action list
@@ -10,7 +12,7 @@ node index.js --action get --id 5
 
 https://ibb.co/yFF5FD0
 
-# Добавялем контакт
+# Добавляем контакт
 
 node index.js --action add --name Mango --email mango@gmail.com --phone 322-22-22
 
