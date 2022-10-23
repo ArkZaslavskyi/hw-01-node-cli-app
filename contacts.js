@@ -1,3 +1,4 @@
+const { v4: uuidv4 } = require('uuid');
 const fs = require('fs').promises;
 const path = require('path');
 
@@ -26,7 +27,7 @@ async function updateContacts(contacts) {
 async function getContactById(contactId) {
 	try {
 		const contacts = await listContacts();
-		return contacts.find(({ id }) => id === contactId);
+		return contacts.find(({ id }) => id === contactId) ?? null;
 	} catch (error) {
 		console.log(error);
 	};
@@ -52,22 +53,11 @@ async function removeContact(contactId) {
 // 
 async function addContact({ name, email, phone }) {
 
-	const getMaxId = contacts => {
-		let maxId = parseInt(contacts[0].id);
-
-		for (const contact of contacts) {
-			const id = parseInt(contact.id);
-			if (id > maxId) { maxId = id; };
-		};
-
-		return maxId;
-	};
-
 	try {
 		const contacts = await listContacts();
 
 		const newContact = {
-			id: (getMaxId(contacts) + 1).toString(),
+			id: uuidv4(),
 			name,
 			email,
 			phone
