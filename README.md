@@ -8,7 +8,7 @@ https://ibb.co/BfvtFNn
 
 # Получаем контакт по id
 
-node index.js --action get --id 5
+node index.js --action get --id 7
 
 https://ibb.co/yFF5FD0
 
@@ -20,6 +20,6 @@ https://ibb.co/dMWVcwK
 
 # Удаляем контакт
 
-node index.js --action remove --id=3
+node index.js --action remove --id=11
 
 https://ibb.co/RzmzLFx
